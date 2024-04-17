@@ -121,3 +121,128 @@ li:hover{
     border-bottom: 3px solid var(--white);
 }
 
+@media (max-width: 600px) {
+  html,
+body {
+  padding: 5px; /* Adjusted padding for mobile */
+}
+
+main,
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+section.area-a {
+  position: relative;
+  background-image: url(../images/login2.jpg);
+  background-size: cover;
+}
+
+section div.background {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--grey-transparent-ligth);
+  padding: 10px; /* Adjusted padding for mobile */
+}
+
+p.title {
+  text-transform: uppercase;
+  color: var(--grey-ligth);
+  animation: type 10s steps(30) infinite; /* Adjusted steps for mobile */
+  border-right: 2px solid var(--grey-ligth); /* Adjusted border thickness for mobile */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes type {
+  0% {
+    width: 0ch;
+  }
+  100% {
+    width: 30ch; /* Adjusted width for mobile */
+  }
+}
+
+img.logo {
+  width: 88px; /* Adjusted width for mobile */
+  display: block;
+}
+
+div.position-logo {
+  position: absolute;
+  bottom: 10px; /* Adjusted position for mobile */
+  width: 90%; /* Adjusted width for mobile */
+  animation: fadeInUp 2s ease;
+}
+
+section.area-b {
+  position: unset;
+  background-color: var(--white);
+}
+
+div.heigth {
+  height: 100%;
+}
+
+section div.form {
+  position: unset;
+  width: 90%; /* Adjusted width for mobile */
+  animation: fadeIn 2s ease;
+}
+
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+label {
+  color: var(--grey-label);
+}
+
+.title-login {
+  margin-bottom: 20px; /* Adjusted margin for mobile */
+}
+
+input {
+  margin-bottom: 10px; /* Adjusted margin for mobile */
+  height: 30px; /* Adjusted height for mobile */
+  outline: none;
+}
+
+.input-login {
+  margin-top: 2px;
+  border: 2px solid var(--grey-label);
+  border-radius: 4px; /* Adjusted border radius for mobile */
+  padding: 6px; /* Adjusted padding for mobile */
+}
+
+.button {
+  margin-top: 20px; /* Adjusted margin for mobile */
+  background-color: var(--wine);
+  color: var(--grey-ligth);
+  border-radius: 4px; /* Adjusted border radius for mobile */
+  border: none;
+  transition: 800ms all;
+}
+
+.button:hover {
+  filter: brightness(1.5);
+  cursor: pointer;
+}
+
+li {
+  margin-right: 10px; /* Adjusted margin for mobile */
+  transition: 500ms all;
+}
+
+li:hover {
+  border-bottom: 2px solid var(--white); /* Adjusted border thickness for mobile */
+}
+
+}

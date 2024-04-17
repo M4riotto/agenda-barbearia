@@ -3,6 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- - - - - - - - - | CSS | - - - - - - - - -->
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/global.css">
@@ -25,7 +26,7 @@
             <section class="area-a">
                 <div class="background f-kanit f-900 f-24">
                     <p class="title animation">
-                        Todo dia é dia para dar um trato no visual .
+                        Todo dia é dia </br> para dar um </br>trato no </br> visual .
                     </p>
 
                     <div class="position-logo display-f align-c justify-bt">

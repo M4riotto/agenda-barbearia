@@ -1,15 +1,15 @@
 <?php
-    include_once("sentinela-adm.php");
-    require_once("../classes/Conexao.php");
-    require_once("../classes/Contato.php");
+include_once("sentinela-adm.php");
+require_once("../classes/Conexao.php");
+require_once("../classes/Contato.php");
 
-    try {
-        $contato = new Contato();
-        $listaContato = $contato->listar();
-        $contaContato = $contato->contar();
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
+try {
+    $contato = new Contato();
+    $listaContato = $contato->listar();
+    $contaContato = $contato->contar();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 
 ?>
 
@@ -18,6 +18,9 @@
 <html lang="pt-br">
 
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- - - - - - - - -| CSS | - - - - - - - - -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/global.css">
@@ -114,20 +117,20 @@
             </div>
         </header>
 
-       
-         <!-- - - -| CORPO DO SITE ⬇️ | - - - -->
-         <div class="content-pagina">
+
+        <!-- - - -| CORPO DO SITE ⬇️ | - - - -->
+        <div class="content-pagina">
             <div class="content-body">
 
                 <p>
                     <?php
-                        foreach ($contaContato as $linha) {
-                            echo ("<label class='f-kanit f-900 f-20 m-b color-grey-ligth'> Existe: " . $linha['Quantidade'] . " mensagens de clientes</label>");
-                        }
+                    foreach ($contaContato as $linha) {
+                        echo ("<label class='f-kanit f-900 f-20 m-b color-grey-ligth'> Existe: " . $linha['Quantidade'] . " mensagens de clientes</label>");
+                    }
                     ?>
                 </p>
                 <!-- - - -| ESTRUTURA QUE PUXA AS INFORMAÇÕES DO BANCO ⬇️ | - - - -->
-               
+
                 <!-- - - -| - = - = - = - = - = - = - = - = - = - = - = - | - - - -->
                 <?php
                 echo ("<div class='display-f align-c w-100 content-card-content'>");

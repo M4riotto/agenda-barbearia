@@ -20,21 +20,21 @@ header {
   box-shadow: -1px -1px 10px black;
 }
 
-.animate-header{
-    animation: fadeInDown 2s ease;
+.animate-header {
+  animation: fadeInDown 2s ease;
 }
 
-header div.header-inicio{
-    height: 100%;
-    width: 80%;
-    background-color: var(--grey-label);
-    padding: 20px 80px;
+header div.header-inicio {
+  height: 100%;
+  width: 80%;
+  background-color: var(--grey-label);
+  padding: 20px 80px;
 }
 
-header div.header-final{
-    height: 100%;
-    width: 20%;
-    padding: 20px 80px;
+header div.header-final {
+  height: 100%;
+  width: 20%;
+  padding: 20px 80px;
 }
 
 header div.principal a {
@@ -45,7 +45,7 @@ header div.principal a {
   transition: 800ms all;
 }
 
-header div.principal a:hover{
+header div.principal a:hover {
   background-color: var(--grey-ligth);
   color: var(--wine);
 }
@@ -58,8 +58,8 @@ nav {
   background-color: var(--grey-dark);
 }
 
-.animate-nav{
-    animation: fadeInLeft 2s ease;
+.animate-nav {
+  animation: fadeInLeft 2s ease;
 }
 
 nav div.content-nav {
@@ -67,7 +67,7 @@ nav div.content-nav {
   height: 100%;
 }
 
-nav div.content-img{
+nav div.content-img {
   height: 10%;
 }
 
@@ -101,7 +101,7 @@ nav div.circulo {
   box-shadow: 5px 5px 10px black;
 }
 
-.animate-circulo{
+.animate-circulo {
   animation: fadeInDown 2s ease;
 }
 
@@ -141,7 +141,7 @@ li a {
   margin-right: 8px;
 }
 
-.label-titulo .material-icons-round{
+.label-titulo .material-icons-round {
   font-size: 60px;
 }
 
@@ -167,3 +167,4 @@ li a {
   margin-left: 14%;
   position: fixed;
 }
+
