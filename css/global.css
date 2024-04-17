@@ -171,3 +171,135 @@ div.heigth {
 .m-t{
   margin-top: 40px;
 }
+
+@media (max-width: 600px) {
+  /*------ classes globais ------*/
+
+.container {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr; /* Changed to single column for mobile */
+}
+
+.content .area-a,
+.content .area-b {
+  /* Removed grid-area quotes */
+}
+
+.display-f {
+  display: flex;
+}
+
+.display-b,
+.display-ib {
+  display: block;
+}
+
+.align-c {
+  align-items: center;
+}
+
+.justify-c,
+.justify-e,
+.justify-bt {
+  justify-content: center; /* Adjusted for mobile */
+}
+
+.f-90 {
+  font-size: 36px; /* Adjusted font size for mobile */
+  line-height: 1.2; /* Adjusted line height for mobile */
+  text-transform: uppercase;
+}
+
+.f-70 {
+  font-size: 28px; /* Adjusted font size for mobile */
+  line-height: 1.2; /* Adjusted line height for mobile */
+  text-transform: uppercase;
+}
+
+.f-36 {
+  font-size: 18px; /* Adjusted font size for mobile */
+}
+
+.f-60 {
+  font-size: 24px; /* Adjusted font size for mobile */
+  text-transform: uppercase;
+}
+
+.f-24 {
+  font-size: 14px; /* Adjusted font size for mobile */
+}
+
+.f-20 {
+  font-size: 12px; /* Adjusted font size for mobile */
+}
+
+.f-18 {
+  font-size: 11px; /* Adjusted font size for mobile */
+}
+
+.f-16 {
+  font-size: 10px; /* Adjusted font size for mobile */
+}
+
+.f-14 {
+  font-size: 9px; /* Adjusted font size for mobile */
+}
+
+div.heigth {
+  height: 100vh;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.over {
+  overflow: hidden;
+}
+
+.color-white {
+  color: var(--white);
+}
+
+.color-wine {
+  color: var(--wine);
+}
+
+.color-label {
+  color: var(--grey-label);
+}
+
+.color-blue {
+  color: var(--blue);
+}
+
+.color-grey-ligth {
+  color: var(--grey-ligth);
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.display-n {
+  display: none;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.m-b {
+  margin-bottom: 5px; /* Reduced margin for mobile */
+}
+
+.m-t {
+  margin-top: 20px; /* Reduced margin for mobile */
+}
+
+}

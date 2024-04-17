@@ -50,3 +50,57 @@ nav .button:hover {
   filter: brightness(1.5);
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .top-menu {
+    display: none;
+    position: fixed;
+    width: 100%;
+    transition: 800ms all;
+    background-color: var(--grey-dark);
+    padding: 1px 10px; /* Adjusted padding for mobile */
+    color: var(--grey-ligth);
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  
+  .top-menu ul,
+  .top-menu li {
+    display: inline-block;
+  }
+  
+  .top-menu li {
+    width: max-content;
+    text-align: center;
+    padding-inline-start: 10px; /* Adjusted padding for mobile */
+    padding-inline-end: 10px; /* Adjusted padding for mobile */
+    padding: 10px; /* Adjusted padding for mobile */
+  }
+  
+  nav a {
+    letter-spacing: 0.5px; /* Adjusted letter-spacing for mobile */
+  }
+  
+  .size {
+    width: 90%; /* Adjusted width for mobile */
+    max-width: 270px; /* Added max-width for mobile */
+  }
+  
+  nav .button {
+    height: 40px; /* Adjusted height for mobile */
+    width: 90%; /* Adjusted width for mobile */
+    max-width: 280px; /* Added max-width for mobile */
+    background-color: var(--wine);
+    color: var(--white);
+    border-radius: 4px;
+    transition: all 800ms;
+    text-transform: uppercase;
+  }
+  
+  nav .button:hover {
+    filter: brightness(1.5);
+    cursor: pointer;
+  }
+  
+}
