@@ -133,8 +133,8 @@ div .card-pag-serv img {
 @media (max-width: 600px) {
   div .card-pag {
     width: 20rem;
-    height: 32rem;
-    margin-right: 3.7rem;
+    height: 29rem;
+    margin-right: 1rem;
     background-color: var(--grey-label);
     /*background-color: #ffffff10;
     backdrop-filter: blur(12px);*/

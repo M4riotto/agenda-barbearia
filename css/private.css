@@ -8,7 +8,6 @@ body {
 }
 
 div.content-body {
-  padding: 0 80px;
   height: 90%;
 }
 
@@ -27,14 +26,11 @@ header {
 header div.header-inicio {
   height: 100%;
   width: 80%;
-  background-color: var(--grey-label);
-  padding: 20px 80px;
 }
 
 header div.header-final {
   height: 100%;
   width: 20%;
-  padding: 20px 80px;
 }
 
 header div.principal a {
@@ -88,13 +84,13 @@ nav img.img {
   height: 76px;
 }
 
-nav div.circulo {
+ div.circulo {
+  z-index: 999;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   background-color: red;
   position: absolute;
-  margin-top: -54px;
   background-image: url(../images/perfil.jpg);
   background-size: cover;
   border: var(--grey-label) solid 6px;
@@ -146,8 +142,6 @@ li a {
 }
 
 .content-pagina {
-  width: 85%;
-  margin-left: 15%;
   padding-top: 6%;
 }
 
