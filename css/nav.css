@@ -58,7 +58,7 @@ nav .button:hover {
     width: 100%;
     transition: 800ms all;
     background-color: var(--grey-dark);
-    padding: 1px 10px; /* Adjusted padding for mobile */
+    padding: 10px 10px 0 10px; /* Adjusted padding for mobile */
     color: var(--grey-ligth);
     top: 0;
     left: 0;
@@ -84,13 +84,13 @@ nav .button:hover {
   
   .size {
     width: 90%; /* Adjusted width for mobile */
-    max-width: 270px; /* Added max-width for mobile */
+    max-width: 150px; /* Added max-width for mobile */
   }
   
   nav .button {
     height: 40px; /* Adjusted height for mobile */
-    width: 90%; /* Adjusted width for mobile */
-    max-width: 280px; /* Added max-width for mobile */
+    width: 70%; /* Adjusted width for mobile */
+    max-width: 150px; /* Added max-width for mobile */
     background-color: var(--wine);
     color: var(--white);
     border-radius: 4px;

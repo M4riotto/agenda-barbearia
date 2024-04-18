@@ -47,6 +47,10 @@
   justify-content: space-between;
 }
 
+.justify-ar {
+  justify-content: space-around;
+}
+
 .f-90 {
   font-size: 90px;
   line-height: 82px;
@@ -185,9 +189,12 @@ div.heigth {
   grid-template-columns: 1fr; /* Changed to single column for mobile */
 }
 
-.content .area-a,
-.content .area-b {
-  /* Removed grid-area quotes */
+.content .area-a {
+  grid-area: "a";
+}
+
+.menu{
+  display: none !important;
 }
 
 .display-f {

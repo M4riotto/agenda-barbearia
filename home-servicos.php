@@ -68,23 +68,27 @@
 
                 <nav>
                     <div class="top-menu" id="menu-topo">
-                        <div class="display-f align-c justify-bt f-mont f-600 f-20 width-100">
-                            <div class="logo">
-                                <a href="./index.php">
-                                    <img class="size" src="./images/logo.png" alt="">
-                                </a>
+                        <div class="align-c justify-bt f-mont f-600 f-20 width-100">
+                            <div class="display-f justify-ar">
+                                <div class="logo">
+                                    <a href="./index.php">
+                                        <img class="size" src="./images/logo.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="button display-f align-c justify-c f-kanit f-700 f-14">
+                                    <a href="./login.php">Área do profissional</a>
+                                </div>
                             </div>
-                            <div>
-                                <ul class="display-f align-c">
-                                    <li><a href="./index.php">Home</a></li>
-                                    <li><a href="./home-servicos.php"> Serviços</a></li>
-                                    <li><a href="./home-produtos.php">Produtos</a></li>
+                            <br>
+                            <div class="display-f justify-c">
+                                <ul class="">
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#services"> Serviços</a></li>
+                                    <li><a href="#products">Produtos</a></li>
                                     <li><a href="#talk">Fale conosco</a></li>
                                 </ul>
                             </div>
-                            <div class="button display-f align-c justify-c f-kanit f-700 f-14">
-                                <a href="./login.php">Área do profissional</a>
-                            </div>
+
                         </div>
                     </div>
                 </nav>
@@ -97,19 +101,18 @@
 
     <!--| ESTRUTURA QUE PUXA AS INFORMAÇÕES DO BANCO ⬇️ | - - - - -->
     <?php
-                echo ("<div class='display-f align-c w-100 content-card-content'>");
+                echo ("<div class='display-f justify-ar w-100 content-card-content'>");
                 foreach ($listaServico as $linha) {
                     echo ("
-                        <div class='card-pag-serv animate_card'>
-                            <img src='./private-adm/" . $linha['fotoServico'] . "'>
-                            <div class='content-card'>
-                                <div class='t-center f-kanit f-900 f-20 upper m-b'>" . $linha['nomeServico'] . "</div>
-                                <div class='t-center f-mont f-200 f-14'>
-                                    <p>" . $linha['descServico'] . "</p>
-                                </div>
-                            </div>
+                    <div class='card-pag-serv animate_card'>
+                    <img src='./private-adm/" . $linha['fotoServico'] . "'>
+                    <div class='content-card'>
+                        <div class='t-center f-kanit f-900 f-20 upper m-b'>" . $linha['nomeServico'] . "</div>
+                        <div class='t-center f-mont f-200 f-14'>
+                            <p>" . $linha['descServico'] . "</p>
                         </div>
-                    ");
+                    </div>
+                </div>");
                 }
                 echo ("</div>");
                 ?>

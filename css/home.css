@@ -240,12 +240,15 @@ body {
   padding: 5px; /* Adjusted padding for mobile */
 }
 
+.logo{
+  max-width: 150px;
+}
 /*------ vídeo ------*/
 div.content-hero {
   position: relative;
   background-image: url(../images/bg2.jpg);
   background-size: cover;
-  height: 90vh; /* Adjusted height for mobile */
+  height: 50vh; /* Adjusted height for mobile */
   background-attachment: fixed;
   animation: fadeIn 3s ease-in;
 }

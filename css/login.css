@@ -26,6 +26,7 @@ section div.background {
 }
 
 p.title {
+  padding: 20px 0;
   text-transform: uppercase;
   color: var(--grey-ligth);
   animation: type 7s steps(45) infinite;
@@ -142,7 +143,6 @@ section.area-a {
 
 section div.background {
   position: absolute;
-  display: flex;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -153,7 +153,7 @@ section div.background {
 p.title {
   text-transform: uppercase;
   color: var(--grey-ligth);
-  animation: type 10s steps(30) infinite; /* Adjusted steps for mobile */
+  animation: type 7s steps(35) infinite;
   border-right: 2px solid var(--grey-ligth); /* Adjusted border thickness for mobile */
   overflow: hidden;
   white-space: nowrap;
@@ -164,7 +164,7 @@ p.title {
     width: 0ch;
   }
   100% {
-    width: 30ch; /* Adjusted width for mobile */
+    width: 25ch; /* Adjusted width for mobile */
   }
 }
 
@@ -178,11 +178,32 @@ div.position-logo {
   bottom: 10px; /* Adjusted position for mobile */
   width: 90%; /* Adjusted width for mobile */
   animation: fadeInUp 2s ease;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.efeito-vidro {
+  background: rgba( 255, 255, 255, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  /* backdrop-filter: blur( 13.5px ); */
+  -webkit-backdrop-filter: blur( 13.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 section.area-b {
-  position: unset;
+  width: 100%;
+  margin: 70% auto;
+  position: absolute;
+  background-color: transparent;
+  height: 40%;
+  border-radius: 10px;
+}
+
+section.area-b > div > .form > form{
+  padding: 20px;
   background-color: var(--white);
+  border-radius: 10px;
 }
 
 div.heigth {
