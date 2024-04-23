@@ -3,7 +3,7 @@
   width: 100%;
   transition: 800ms all;
   background-color: var(--grey-dark);
-  padding: 2px 20px;
+  padding: 10px 10px 0 10px;
   color: var(--grey-ligth);
   top: 0;
   left: 0;
@@ -57,13 +57,15 @@ main {
 }
 
 @keyframes fale {
-  0%{
+  0% {
     background-position-y: 0%;
   }
-  50%{
+
+  50% {
     background-position-y: 50%;
   }
-  100%{
+
+  100% {
     background-position-y: 100%;
   }
 }
@@ -125,4 +127,39 @@ input {
 .button3:hover {
   filter: brightness(1.2);
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .size {
+    max-width: 150px;
+  }
+
+  nav .button {
+    height: 40px;
+    width: 70%;
+    max-width: 150px;
+    background-color: var(--wine);
+    color: var(--white);
+    border-radius: 4px;
+    transition: all 800ms;
+    text-transform: uppercase;
+  }
+
+  div.card {
+    position: absolute;
+    width: 80%;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 8px 8px 28px black;
+    bottom: 70px;
+  }
+
+  .top-menu li {
+    width: max-content;
+    text-align: center;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    padding: 10px;
+  }
 }

@@ -63,3 +63,16 @@ nav .button:hover {
   filter: brightness(1.5);
   cursor: pointer;
 }
+
+
+
+@media (max-width: 600px) {
+  .banner-prod {
+    position: relative;
+    background-image: url(../images/badge-produtos.svg);
+    height: 90vh;
+    background-position: 50% 10%;   
+    background-attachment: fixed;
+    animation: fadeIn 3s ease-in;
+  }
+}
