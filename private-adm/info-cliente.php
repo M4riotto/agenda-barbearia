@@ -275,7 +275,7 @@ try {
 
                         <!-- - - -| ESTRUTURA QUE PUXA AS INFORMAÇÕES DO BANCO ⬇️ | - - - -->
                         <?php
-                        echo ("<div class='display-f align-c w-100 content-card-content justify-content-center'>");
+                        echo ("<div class='display-f align-c w-100 content-card-content justify-content-around'>");
                         foreach ($listacliente as $linha) {
                             echo ("
                             <div class='card-pag-cliente animate_card'>

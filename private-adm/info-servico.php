@@ -274,28 +274,28 @@ try {
 
                         <!-- - - -| ESTRUTURA QUE PUXA AS INFORMAÇÕES DO BANCO ⬇️ | - - - -->
                         <?php
-                        echo ("<div class='display-f align-c w-100 content-card-content justify-content-center'>");
+                        echo ("<div class='display-f align-c w-100 content-card-content justify-content-around'>");
                         foreach ($listaservico as $linha) {
                             echo ("
-                           
-                        <div class='card-pag animate_card'>
-                        <img src=" . $linha['fotoServico'] . ">
+                            <div class='card-pag-serv animate_card'>
+                            <img src=" . $linha['fotoServico'] . ">
                         <div class='content-card'>
-                            <div class='t-center f-kanit f-900 f-20 upper m-b'>" . $linha['nomeServico'] . "</div>
+                        <div class='t-center f-kanit f-900 f-20 upper m-b'>" . $linha['nomeServico'] . "</div>
                             <div class='t-center f-mont f-200 f-14'>
-                                <p>" . $linha['descServico'] . "</p>
-                            </div>
-
+                            <p>" . $linha['descServico'] . "</p>
+                            </div>      
                             <div class='m-t'>
-                                <a href='excluir.php?excServico=" . $linha['idServico'] . "'> 
-                                    <div class='f-kanit botao-excluir display-f justify-c align-c'>
-                                        <span class='material-icons-round'>delete_forever</span>
-                                        Excluir 
-                                    </div>
-                                </a>
-                            </div>
+                            <a href='excluir.php?excServico=" . $linha['idServico'] . "'> 
+                                            <div class='f-kanit botao-excluir display-f justify-c align-c'>
+                                                <span class='material-icons-round'>delete_forever</span>
+                                                Excluir 
+                                            </div>
+                                        </a>
+                                    </div>         
                         </div>
                     </div>
+                           
+                       
                         ");
                         }
                         echo ("</div>");

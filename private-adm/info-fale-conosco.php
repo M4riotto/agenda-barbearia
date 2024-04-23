@@ -263,7 +263,7 @@ try {
 
                         <!-- - - -| ESTRUTURA QUE PUXA AS INFORMAÇÕES DO BANCO ⬇️ | - - - -->
                         <?php
-                        echo ("<div class='display-f align-c w-100 content-card-content justify-content-center'>");
+                        echo ("<div class='display-f align-c w-100 content-card-content justify-content-around'>");
                         foreach ($listaContato as $linha) {
                             echo ("<div class='card-fale animate_card'>
                             <div class='content-card'>

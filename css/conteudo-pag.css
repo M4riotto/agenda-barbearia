@@ -147,11 +147,9 @@ div .card-pag-serv img {
   }
   
   div .card-pag-cliente {
-    width: 20rem;
-    margin-right: 3.7rem;
+    width: 13rem;
+    margin-right: 0;
     background-color: var(--grey-label);
-    /*background-color: #ffffff10;
-    backdrop-filter: blur(12px);*/
     color: white;
     border-radius: 1.1rem;
     margin-top: 1rem;
@@ -161,11 +159,9 @@ div .card-pag-serv img {
   }
   
   div .card-pag-prod {
-    width: 20rem;
-    margin-right: 3.7rem;
+    width: 13rem;
+    margin-right: 0;
     background-color: var(--grey-label);
-    /*background-color: #ffffff10;
-    backdrop-filter: blur(12px);*/
     color: white;
     border-radius: 1.1rem;
     margin-top: 1rem;
@@ -175,11 +171,9 @@ div .card-pag-serv img {
   }
   
   div .card-pag-serv{
-    width: 8rem;
+    width: 13rem;
     margin-right: 0;
     background-color: var(--grey-label);
-    /*background-color: #ffffff10;
-    backdrop-filter: blur(12px);*/
     color: white;
     border-radius: 1.1rem;
     margin-top: 1rem;
@@ -189,11 +183,9 @@ div .card-pag-serv img {
   }
   
   div .card-fale{
-    width: 31rem;
-    margin-right: 3.7rem;
+    width: 13rem;
+    margin-right: 0;
     background-color: var(--grey-label);
-    /*background-color: #ffffff10;
-    backdrop-filter: blur(12px);*/
     color: white;
     border-radius: 1.1rem;
     margin-top: 1rem;
@@ -236,6 +228,7 @@ div .card-pag-serv img {
   
   .content-card-content {
     flex-wrap: wrap;
+    justify-content: space-around !important;
   }
   
   .botao-excluir {
