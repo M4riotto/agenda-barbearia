@@ -14040,9 +14040,8 @@ button.close:focus {
 }
 
 .app-btn-primary {
-    background: #dd494b;
+    background: #d3191b;
     color: #fff;
-    border-color: #dd494b;
 }
 
 .app-btn-primary:hover,
