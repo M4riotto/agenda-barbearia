@@ -1,5 +1,5 @@
 .top-menu {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   transition: 800ms all;
   background-color: var(--grey-dark);
@@ -51,6 +51,7 @@ nav .button:hover {
 }
 
 main {
+  padding-top: 50px;
   background-image: url(../images/bg-fale.jpg);
   background-size: cover;
   animation: fale 5s ease alternate infinite;
@@ -78,7 +79,7 @@ html {
 }
 
 div.card {
-  position: absolute;
+  position: none;
   width: 618px;
   background-color: var(--white);
   padding: 20px;
@@ -145,6 +146,9 @@ input {
     text-transform: uppercase;
   }
 
+  .top-menu{
+    position: fixed;
+  }
   div.card {
     position: absolute;
     width: 80%;
