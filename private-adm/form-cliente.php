@@ -86,7 +86,7 @@ include_once("sentinela-adm.php");
                         </div>
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link active " href="info-produto.php">
+                            <a class="nav-link  " href="info-produto.php">
                                 <span class="nav-icon">
                                     <span class="material-icons-round m-r">monetization_on</span>
                                 </span>
@@ -95,7 +95,7 @@ include_once("sentinela-adm.php");
                         </li><!--//nav-item-->
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link " href="info-cliente.php">
+                            <a class="nav-link active" href="info-cliente.php">
                                 <span class="nav-icon">
                                     <span class="material-icons-round m-r">account_circle</span>
 
