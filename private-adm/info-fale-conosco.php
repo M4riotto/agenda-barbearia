@@ -30,13 +30,13 @@ try {
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/private.css">
-    <link rel="stylesheet" href="../css/private-produtos.css">
-    <link rel="stylesheet" href="../css/conteudo-pag.css">
-    <link rel="stylesheet" href="../css/portal.css">
-    <link rel="stylesheet" href="../css/alert.css">
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo filemtime('../css/style.css'); ?>">
+    <link rel="stylesheet" href="../css/global.css?v=<?php echo filemtime('../css/global.css'); ?>">
+    <link rel="stylesheet" href="../css/private.css?v=<?php echo filemtime('../css/private.css'); ?>">
+    <link rel="stylesheet" href="../css/private-produtos.css?v=<?php echo filemtime('../css/private-produtos.css'); ?>">
+    <link rel="stylesheet" href="../css/portal.css?v=<?php echo filemtime('../css/portal.css'); ?>">
+    <link rel="stylesheet" href="../css/alert.css?v=<?php echo filemtime('../css/alert.css'); ?>">
+    <link rel="stylesheet" href="../css/conteudo-pag.css?v=<?php echo filemtime('../css/conteudo-pag.css'); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;700;900&family=Montserrat:wght@300;400:500&display=swap" rel="stylesheet">

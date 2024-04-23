@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- - - - - - - - - | CSS | - - - - - - - - -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/global.css">
+
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo filemtime('../css/style.css'); ?>">
+    <link rel="stylesheet" href="../css/global.css?v=<?php echo filemtime('../css/global.css'); ?>">
+    <link rel="stylesheet" href="../css/home.css?v=<?php echo filemtime('../css/home.css'); ?>">
+    <link rel="stylesheet" href="./css/nav.css?v=<?php echo filemtime('../css/nav.css'); ?>">
     <!-- - - - - - - - - | FONTE | - - - - - - - - -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

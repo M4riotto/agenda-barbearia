@@ -26,11 +26,12 @@ try {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- - - - - - - - -| CSS | - - - - - - - - -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/private.css">
-    <link rel="stylesheet" href="../css/portal.css">
-    <link rel="stylesheet" href="../css/private-agenda.css">
+
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo filemtime('../css/style.css'); ?>">
+    <link rel="stylesheet" href="../css/global.css?v=<?php echo filemtime('../css/global.css'); ?>">
+    <link rel="stylesheet" href="../css/private.css?v=<?php echo filemtime('../css/private.css'); ?>">
+    <link rel="stylesheet" href="../css/private-agenda.css?v=<?php echo filemtime('../css/private-agenda.css'); ?>">
+    <link rel="stylesheet" href="../css/portal.css?v=<?php echo filemtime('../css/portal.css'); ?>">
     <!-- - - - - - - - -| FONTE | - - - - - - - - -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
