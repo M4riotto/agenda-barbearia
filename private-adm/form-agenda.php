@@ -1,5 +1,21 @@
 <?php
 include_once("sentinela-adm.php");
+require_once("../classes/Agenda.php");
+require_once("../classes/Cliente.php");
+require_once("../classes/Servico.php");
+
+try {
+
+    $cliente = new Cliente();
+    $listacliente = $cliente->listar();
+
+    $servico = new Servico();
+    $listaservico = $servico->listar();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+?>
 
 ?>
 <!DOCTYPE html>
