@@ -120,7 +120,7 @@ nav .button:hover {
     }
     
     nav .button {
-        height: 50px;
+        height: 25px;
         width: 280px;
         background-color: var(--wine);
         color: var(--white);
