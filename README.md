@@ -29,7 +29,7 @@
 ### <div align="center">Integrantes</div>
 <div align="center">
  
- <img src="./private-adm/imgs/apresent.png"></img>
+ <img src="./private-adm/imgs/apresent.png" width="100px"></img>
  
 </div>
 
