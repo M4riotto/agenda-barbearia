@@ -231,6 +231,8 @@ include_once("sentinela-adm.php");
 
     <!-- Page Specific JS -->
     <script src="./js/app.js"></script>
+    <script src="../js/script.js"></script>
+    
 
 </body>
 
