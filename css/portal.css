@@ -4349,7 +4349,7 @@ fieldset:disabled .btn {
 
 .nav-link {
     display: block;
-    
+
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
     font-size: var(--bs-nav-link-font-size);
     font-weight: var(--bs-nav-link-font-weight);
@@ -14385,8 +14385,23 @@ button.close:focus {
     left: 0;
     top: 0;
     font-size: .875rem;
-    border-right: 1px solid #e7e9ed;
+    padding-right: 5px;
+    /* height: 90% !important; */
+    background-image: url(../images/bg-form.svg) !important;
+    animation: background 10s ease alternate infinite !important;
 }
+    
+    @keyframes background {
+      0% {
+        background-position-x: 0%;
+      }
+      50% {
+        background-position-x: 50%;
+      }
+      100% {
+        background-position-x: 100%;
+      }
+    }
 
 .app-sidepanel .panel-drop {
     display: none;
@@ -14645,17 +14660,17 @@ button.close:focus {
     overflow-x: hidden;
 }
 
-.app-login{
+.app-login {
     background-color: #000;
 }
 
-.app2{
-        min-height: 100vh;
-        height: 100%;
-        width: 100%;
-        background-color: #000;
-        padding-top: 56px;
-        overflow-x: hidden;
+.app2 {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    padding-top: 56px;
+    overflow-x: hidden;
 }
 
 .app-footer .copyright {
@@ -15212,7 +15227,7 @@ button.close:focus {
 .auth-main-col,
 .auth-background-col {
     position: relative;
-    
+
     height: 100vh;
 }
 
@@ -15347,4 +15362,3 @@ button.close:focus {
         width: 100%
     }
 }
-
