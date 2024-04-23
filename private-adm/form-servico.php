@@ -1,17 +1,20 @@
 <?php
 include_once("sentinela-adm.php");
-?>
 
+?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- - - - - - - - -| CSS | - - - - - - - - -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/private.css">
+    <link rel="stylesheet" href="../css/portal.css">
     <link rel="stylesheet" href="../css/private-servicos.css">
     <!-- - - - - - - - -| FONTE | - - - - - - - - -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,127 +27,210 @@ include_once("sentinela-adm.php");
     <!-- - - - - - - - -| ÍCONE | - - - - - - - - -->
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <!-- - - - - - - - -| TÍTULO & ÍCONE HEAD | - - - - - - - - -->
-    <title>Cadastro de Serviços | Duhel</title>
+    <title>Cadastro Produto | Duhel</title>
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
-    <!-- - - - - - - - -| JQUERY/JS | - - - - - - - - -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div class="content">
-        <!-- - - -| NAVBAR CANTO ESQUERDO ← | - - - -->
-        <nav class="area-a">
-            <div class="content-nav">
-                <div class="content-img display-f justify-c">
-                    <a href="index-private-adm.php"><img class="img" src="../images/logo.png" alt="Logo barbearia Duhel"></a>
+<body class="app" onload="loadEventosDashboard()">
+    <header class="app-header fixed-top">
+        <div class="app-header-inner">
+            <div class="container-fluid py-2">
+                <div class="app-header-content">
+                    <div class="row justify-content-between">
+
+                        <div class="col-auto">
+                            <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img">
+                                    <title>Menu</title>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+                                </svg>
+                            </a>
+                        </div><!--//col-->
+                        <div class="app-search-box col">
+                            <div class="display-f justify-bt align-c header-inicio content-header-list f-mont f-700 f-20">
+                                <p>Cadastro de serviço</p>
+
+                            </div>
+                        </div><!--//app-search-box-->
+
+                        <div class="app-utilities col-auto">
+
+                            <div class="header-final principal">
+                                <a href="../logout-login.php" class="display-f align-c justify-c">
+                                    <span class="material-icons-round m-r">power_settings_new</span>
+                                    Sair
+                                </a>
+                            </div>
+                        </div><!--//app-utilities-->
+                    </div><!--//row-->
+                </div><!--//app-header-content-->
+            </div><!--//container-fluid-->
+        </div><!--//app-header-inner-->
+        <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden">
+            <div id="sidepanel-drop" class="sidepanel-drop"></div>
+            <div class="sidepanel-inner d-flex flex-column">
+                <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">×</a>
+                <div class="app-branding">
+                    <a class="app-logo" href="index.php">
+                        <img class="logo-icon me-2" src="../images/logo.png" alt="Logo barbearia Duhel"></a>
+
+
+                </div><!--//app-branding-->
+
+                <div class="display-f justify-c">
+                    <div class="circulo"></div>
                 </div>
-                <div class="content-menu">
-                    <div class="display-f justify-c">
-                        <div class="circulo"></div>
-                    </div>
-                    <div class="content-opcoes">
+
+                <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+
+                    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                         <div class="display-f justify-c">
                             <p class="f-mont f-700 f-18 color-white">Olá, Helinda!</p>
                         </div>
                         <div class="display-f justify-c">
                             <div class="linha"></div>
                         </div>
-
-                        <ul class="principal">
-                            <a href="./info-produto.php">
-                                <li class="f-mont f-700 f-16">
+                        <li class="nav-item">
+                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                            <a class="nav-link active " href="info-produto.php">
+                                <span class="nav-icon">
                                     <span class="material-icons-round m-r">monetization_on</span>
-                                    Produtos
-                                </li>
-                            </a>
-
-                            <a href="./info-cliente.php">
-                                <li class="f-mont f-700 f-16">
+                                </span>
+                                <span class="nav-link-text f-mont f-700 f-16">Produtos</span>
+                            </a><!--//nav-link-->
+                        </li><!--//nav-item-->
+                        <li class="nav-item">
+                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                            <a class="nav-link " href="info-cliente.php">
+                                <span class="nav-icon">
                                     <span class="material-icons-round m-r">account_circle</span>
-                                    Clientes
-                                </li>
-                            </a>
 
-                            <a href="./info-servico.php">
-                                <li class="f-mont f-700 f-16">
+                                </span>
+                                <span class="nav-link-text f-mont f-700 f-16">Clientes</span>
+                            </a><!--//nav-link-->
+                        </li><!--//nav-item-->
+                        <li class="nav-item">
+                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                            <a class="nav-link " href="info-servico.php">
+                                <span class="nav-icon">
                                     <span class="material-icons-round m-r">content_cut</span>
-                                    Serviços
-                                </li>
-                            </a>
 
-                            <a href="./info-agenda.php">
-                                <li class="f-mont f-700 f-16">
+                                </span>
+                                <span class="nav-link-text f-mont f-700 f-16">Serviços</span>
+                            </a><!--//nav-link-->
+                        </li><!--//nav-item-->
+                        <li class="nav-item">
+                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                            <a class="nav-link  " href="info-agenda.php">
+                                <span class="nav-icon">
                                     <span class="material-icons-round m-r">event_available</span>
-                                    Agendamento
-                                </li>
-                            </a>
 
-                            <a href="./info-fale-conosco.php">
-                                <li class="f-mont f-700 f-16">
+                                </span>
+                                <span class="nav-link-text f-mont f-700 f-16">Agendamento</span>
+                            </a><!--//nav-link-->
+                        </li><!--//nav-item-->
+                        <li class="nav-item">
+                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                            <a class="nav-link" href="info-fale-conosco.php">
+                                <span class="nav-icon">
                                     <span class="material-icons m-r">contact_mail</span>
-                                    Mensagens
-                                </li>
-                            </a>
-                        </ul>
+
+                                </span>
+                                <span class="nav-link-text f-mont f-700 f-16">Mensagens</span>
+                            </a><!--//nav-link-->
+                        </li><!--//nav-item-->
+
+                    </ul><!--//app-menu-->
+                </nav><!--//app-nav-->
+
+            </div><!--//sidepanel-inner-->
+        </div><!--//app-sidepanel-->
+    </header>
+
+    <div class="anima"></div>
+    <div class="app-wrapper">
+
+        <div class="app-content pt-3 p-md-3 p-lg-4">
+            <div class="row g-3 mb-4 align-items-center justify-content-between">
+                <div class="col-auto">
+                    <div class="page-utilities">
+                        <div class="row g-2 justify-content-start justify-content-md-end">
+
+                            <div class="col-auto">
+
+                                <a id="cadastroMemb" class="btn app-btn-primary" href="./form-agenda.php" class="display-f align-c justify-c">
+                                    Agendar
+                                </a>
+
+                            </div>
+                        </div><!--//row-->
+                    </div><!--//table-utilities-->
+                </div><!--//col-auto-->
+            </div><!--//row-->
+            <div class="container-xl d-flex row" id="eventos">
+                <div class="content-pagina ">
+
+                    <div class="content-body ">
+
+                        <!-- - - -| FORMULÁRIO DE CADASTRO ✎ | - - - -->
+                        <main class="display-f align-c justify-c">
+                            <div class="bg-form ">
+                                <div class="content-body">
+                                    <div class="display-f align-c justify-c content-form">
+                                        <div class="card">
+                                            <div class="label-titulo">
+                                                <label class="display-f align-c justify-c f-mont f-900 f-36 color-label">
+                                                    <span class="material-icons-round m-r color-blue">content_cut</span>
+                                                    Cadastro de serviços
+                                                </label>
+                                            </div>
+                                            <form method="post" action="cadastrar-servico.php" enctype="multipart/form-data">
+                                                <label class="f-mont f-500 f-18">Nome do Serviço</label>
+                                                <input class="f-mont f-500 f-14 input" type="text" id="nomeServico" name="nomeServico" placeholder="Digite o nome do serviço">
+                                                <br> <br>
+                                                <label class="f-mont f-500 f-18">Descrição do Serviço</label>
+                                                <textarea class="f-mont f-500 f-14 input" rows="5" cols="50" name="descServico" id="descServico" placeholder="Digite brevemente a descrição do serviço"></textarea>
+                                                <br> <br>
+                                                <label class="f-mont f-500 f-18">Foto do Serviço</label>
+                                                <input type="file" id="fotoServico" name="fotoServico">
+                                                <br> <br>
+                                                <input onclick="abrirAlerta()" class="button f-mont f-700 f-18" type="submit" value="Enviar">
+                                                <input class="button2 f-mont f-700 f-18" type="reset" value="Limpar">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
                     </div>
                 </div>
             </div>
-        </nav>
-
-        <div class="area-b">
-            <!-- - - -| BARRA SUPERIOR DO SITE ↑ | - - - -->
-            <header class="display-f justify-bt align-c content-body f-mont f-700 f-16">
-                <div class="display-f justify-bt align-c header-inicio content-header-cad f-mont f-700 f-20">
-                    <div>
-                        <a href="./info-servico.php" class="display-f align-c">
-                            <span class="material-icons-outlined m-r">arrow_back</span>
-                            <p>Cadastro de serviços</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="header-final principal">
-                    <a href="../logout-login.php" class="display-f align-c justify-c">
-                        <span class="material-icons-round m-r">power_settings_new</span>
-                        Sair
-                    </a>
-                </div>
-            </header>
-
-            <!-- - - -| FORMULÁRIO DE CADASTRO ✎ | - - - -->
-            <main class="display-f align-c justify-c">
-                <div class="bg-form ">
-                    <div class="content-body">
-                        <div class="display-f align-c justify-c content-form">
-                            <div class="card">
-                                <div class="label-titulo">
-                                    <label class="display-f align-c justify-c f-mont f-900 f-36 color-label">
-                                        <span class="material-icons-round m-r color-blue">content_cut</span>
-                                        Cadastro de serviços
-                                    </label>
-                                </div>
-                                <form method="post" action="cadastrar-servico.php" enctype="multipart/form-data">
-                                    <label class="f-mont f-500 f-18">Nome do Serviço</label>
-                                    <input class="f-mont f-500 f-14 input" type="text" id="nomeServico" name="nomeServico" placeholder="Digite o nome do serviço">
-                                    <br> <br>
-                                    <label class="f-mont f-500 f-18">Descrição do Serviço</label>
-                                    <textarea class="f-mont f-500 f-14 input" rows="5" cols="50" name="descServico" id="descServico" placeholder="Digite brevemente a descrição do serviço"></textarea>
-                                    <br> <br>
-                                    <label class="f-mont f-500 f-18">Foto do Serviço</label>
-                                    <input type="file" id="fotoServico" name="fotoServico">
-                                    <br> <br>
-                                    <input onclick="abrirAlerta()" class="button f-mont f-700 f-18" type="submit" value="Enviar">
-                                    <input class="button2 f-mont f-700 f-18" type="reset" value="Limpar">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
         </div>
-    </div>
+    </div><!--//app-card-->
 
-    <!------------ link javascript ---------->
-    <script src="../js/script.js"></script>
+
+    </div><!--//container-fluid-->
+    </div><!--//app-content-->
+
+    <footer class=" app-footer">
+        <div class="container text-center py-3">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <!-- <i class="fas fa-heart" style="color: #fb866a;"></i>  -->
+            <small class="copyright">©️ <a class="app-link" href="#" target="_blank">barbearia Duhel </a> </small>
+
+        </div>
+    </footer><!--//app-footer-->
+
+    </div><!--//app-wrapper-->
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./plugins/popper.min.js"></script>
+    <script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Page Specific JS -->
+    <script src="./js/app.js"></script>
+
 </body>
 
 </html>
