@@ -22,6 +22,8 @@ include_once("sentinela-adm.php");
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;700;900&family=Montserrat:wght@300;400:500&display=swap" rel="stylesheet">
     <!-- - - - - - - - -| ANIMAÇÃO | - - - - - - - - -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <!-- - - - - - - - -| ÍCONE | - - - - - - - - -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- - - - - - - - -| ÍCONE | - - - - - - - - -->
@@ -31,7 +33,7 @@ include_once("sentinela-adm.php");
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
 </head>
 
-<body class="app" onload="loadEventosDashboard()">
+<body class="app">
     <header class="app-header fixed-top">
         <div class="app-header-inner">
             <div class="container-fluid py-2">

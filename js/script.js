@@ -9,15 +9,36 @@ $(window).scroll(function () {
 });
 
 function abrirAlerta(){
-    alert("Cadastro concluído com sucesso!");
+    Swal.fire({
+        icon: 'success',
+        title: 'Cadastrado',
+        text: `Cadastro concluido com sucesso!!`,
+        didClose: () => {
+            windows.history.back() // Redireciona para a página desejada após fechar o modal
+        }
+    });
 };
 
 function abrirAlerta2(){
-    alert("Agendamento concluído com sucesso!");
+    Swal.fire({
+        icon: 'success',
+        title: 'Agendado',
+        text: `Agendamento concluído com sucesso!`,
+        didClose: () => {
+            windows.history.back()// Redireciona para a página desejada após fechar o modal
+        }
+    });
 };
 
 function abrirAlerta3(){
-    alert("Mensagem enviada com sucesso!");
+    Swal.fire({
+        icon: 'success',
+        title: 'Enviado',
+        text: `Mensagem enviada com sucesso!`,
+        didClose: () => {
+            windows.history.back(); // Redireciona para a página desejada após fechar o modal
+        }
+    });
 };
 
 function fMasc(objeto, mascara) {
