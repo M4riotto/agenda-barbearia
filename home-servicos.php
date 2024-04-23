@@ -25,12 +25,12 @@
     <!-- - - - - - - - - | CSS | - - - - - - - - -->
 
 
-    <link rel="stylesheet" href="../css/style.css?v=<?php echo filemtime('../css/style.css'); ?>">
-    <link rel="stylesheet" href="../css/global.css?v=<?php echo filemtime('../css/global.css'); ?>">
-    <link rel="stylesheet" href="../css/home.css?v=<?php echo filemtime('../css/home.css'); ?>">
-    <link rel="stylesheet" href="../css/home-servicos.css?v=<?php echo filemtime('../css/home-servicos.css'); ?>">
-    <link rel="stylesheet" href="./css/nav.css?v=<?php echo filemtime('../css/nav.css'); ?>">
-    <link rel="stylesheet" href="./css/conteudo-pag.css?v=<?php echo filemtime('../css/nav.css'); ?>">
+    <link rel="stylesheet" href="./css/style.css?v=<?php echo filemtime('./css/style.css'); ?>">
+    <link rel="stylesheet" href="./css/global.css?v=<?php echo filemtime('./css/global.css'); ?>">
+    <link rel="stylesheet" href="./css/home.css?v=<?php echo filemtime('./css/home.css'); ?>">
+    <link rel="stylesheet" href="./css/home-servicos.css?v=<?php echo filemtime('./css/home-servicos.css'); ?>">
+    <link rel="stylesheet" href="./css/nav.css?v=<?php echo filemtime('./css/nav.css'); ?>">
+    <link rel="stylesheet" href="./css/conteudo-pag.css?v=<?php echo filemtime('./css/nav.css'); ?>">
     <!-- - - - - - - - - | ANIMAÇÃO | - - - - - - - - -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- - - - - - - - - | ICONES | - - - - - - - - -->
