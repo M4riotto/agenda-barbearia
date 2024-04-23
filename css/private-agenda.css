@@ -24,12 +24,13 @@
   }
   
   /*-- - - -| CADASTRO PRODUTO | - - - --*/
-  main {
-    width: 100%;
-    height: 90%;
-    background-image: url(../images/bg-form.svg);
-    animation: background 10s ease alternate infinite;
-  }
+ .anima {
+  width: 100% !important;
+  padding: 5px !important;
+  /* height: 90% !important; */
+  background-image: url(../images/bg-form.svg) !important;
+  animation: background 10s ease alternate infinite !important;
+}
   
   @keyframes background {
     0% {
@@ -44,7 +45,7 @@
   }
   
   main .card {
-    position: absolute;
+    /* position: absolute; */
     background-color: var(--white);
     padding: 20px;
     border-radius: 8px;
@@ -56,13 +57,12 @@
   }
   
   main .bg-form {
-    position: relative;
+    /* position: relative; */
     width: 100%;
-    padding: 280px;
-    background-color: var(--grey-dark);
+    /* padding: 280px; */
+    /* background-color: var(--grey-dark); */
     background-size: cover;
   }
-  
   label,
   input,
   textarea,
