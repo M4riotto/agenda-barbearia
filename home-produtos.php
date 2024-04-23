@@ -101,7 +101,7 @@ try {
 
         <!--| ESTRUTURA QUE PUXA AS INFORMAÇÕES DO BANCO ⬇️ | - - - - -->
         <?php
-        echo ("<div class='display-f align-c w-100 content-card-content'>");
+        echo ("<div class='display-f justify-ar w-100 content-card-content'>");
         foreach ($listaProduto as $linha) {
             echo ("
                     <div class='card-pag-prod animate_card'>

@@ -70,9 +70,26 @@ nav .button:hover {
   .banner-prod {
     position: relative;
     background-image: url(../images/badge-produtos.svg);
-    height: 90vh;
-    background-position: 50% 10%;   
+    height: 60vh;
+    background-position: 50% 90%;
     background-attachment: fixed;
     animation: fadeIn 3s ease-in;
+  }
+
+  div .card-pag-prod {
+    width: 8rem;
+    margin-right: 0;
+    background-color: var(--grey-label);
+    color: white;
+    border-radius: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    transition: all 800ms;
+    box-shadow: 0 0 1em black;
+  }
+
+  .conteudo-pag {
+    background-color: var(--grey-dark);
+    padding: 20px 20px;
   }
 }
