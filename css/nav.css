@@ -84,11 +84,11 @@ nav .button:hover {
   
   .size {
     width: 90%; /* Adjusted width for mobile */
-    max-width: 150px; /* Added max-width for mobile */
+    max-width: 75px; /* Added max-width for mobile */
   }
   
   nav .button {
-    height: 40px; /* Adjusted height for mobile */
+    height: 25px; /* Adjusted height for mobile */
     width: 70%; /* Adjusted width for mobile */
     max-width: 150px; /* Added max-width for mobile */
     background-color: var(--wine);

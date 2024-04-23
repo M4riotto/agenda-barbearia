@@ -67,6 +67,15 @@ nav .button:hover {
 
 
 @media (max-width: 600px) {
+  nav .button {
+    height: 25px;
+    width: 280px;
+    background-color: var(--wine);
+    color: var(--white);
+    border-radius: 4px;
+    transition: all 800ms;
+    text-transform: uppercase;
+}
   .banner-prod {
     position: relative;
     background-image: url(../images/badge-produtos.svg);
