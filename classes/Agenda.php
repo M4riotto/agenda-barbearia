@@ -105,7 +105,7 @@
         public function listar(){
             $conexao = Conexao::conectar();
 
-            $querySelect = "SELECT idagenda, date_format(dataAgenda, '%d/%m/%Y') as dataAgenda, date_format(horaAgenda, '%H:%i') as horaAgenda, tbcliente.nomeCliente , tbservico.nomeServico , tbusuario.nomeUsuario 
+            $querySelect = "SELECT idagenda, date_format(dataAgenda, '%d/%m/%Y') as dataAgenda, horaAgenda as horaAgenda, tbcliente.nomeCliente , tbservico.nomeServico , tbusuario.nomeUsuario 
                             FROM tbagenda
                             INNER JOIN tbservico
                                 ON tbagenda.idservico = tbservico.idServico
