@@ -1,5 +1,5 @@
 <?php
-include_once("sentinela-adm.php");
+// include_once("sentinela-adm.php");
 require_once("../classes/Agenda.php");
 require_once("../classes/Cliente.php");
 require_once("../classes/Servico.php");

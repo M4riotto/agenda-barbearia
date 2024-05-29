@@ -50,6 +50,7 @@
                     <ul>
                         <li class="hover"><a href="#home">Home</a></li>
                         <li class="hover"><a href="#services"> Serviços</a></li>
+                        <li class="hover"><a href="./private-adm/form-agenda.php"> Agendar</a></li>
                         <li class="hover"><a href="#products">Produtos</a></li>
                         <li class="hover"><a href="#talk">Fale conosco</a></li>
                         <li class="hover2"><a href="./login.php">Área do profissional</a></li>
@@ -74,6 +75,7 @@
                                 <ul class="">
                                     <li><a href="#home">Home</a></li>
                                     <li><a href="#services"> Serviços</a></li>
+                                    <li><a href="./private-adm/form-agenda.php"> Agendar</a></li>
                                     <li><a href="#products">Produtos</a></li>
                                     <li><a href="#talk">Fale conosco</a></li>
                                 </ul>
