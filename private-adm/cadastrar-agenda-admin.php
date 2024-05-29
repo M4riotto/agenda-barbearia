@@ -8,32 +8,29 @@ require_once("../classes/Servico.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Valide e sane os dados recebidos do formulário
     $dataAgenda = filter_input(INPUT_POST, 'dataAgenda', FILTER_SANITIZE_STRING);
-    $horaAgenda = filter_input(INPUT_POST, 'horaAgenda', FILTER_SANITIZE_STRING);
-    $clienteAgenda = filter_input(INPUT_POST, 'clienteAgenda', FILTER_VALIDATE_INT);
-    $servicoAgenda = filter_input(INPUT_POST, 'servicoAgenda', FILTER_VALIDATE_INT);
+    $horaInicio = filter_input(INPUT_POST, 'horaInicio', FILTER_SANITIZE_STRING);
+    $horaTermino = filter_input(INPUT_POST, 'horaTermino', FILTER_SANITIZE_STRING);
+    $frequencia = filter_input(INPUT_POST, 'frequencia', FILTER_VALIDATE_INT);
 
     // Verifique se todos os campos obrigatórios foram preenchidos
-    if ($dataAgenda && $horaAgenda && $clienteAgenda && $servicoAgenda) {
-        // Crie uma nova instância de Agenda e configure os valores
-        $agenda = new Agenda();
-        $agenda->setDataAgenda($dataAgenda);
-        $agenda->setHoraAgenda($horaAgenda);
+    if ($dataAgenda && $horaInicio && $horaTermino && $frequencia) {
+        // Converta as horas para objetos DateTime para facilitar o cálculo
+        $inicio = new DateTime($horaInicio);
+        $termino = new DateTime($horaTermino);
 
-        // Crie uma nova instância de Cliente e configure o ID
-        $cliente = new Cliente();
-        $cliente->setIdCliente($clienteAgenda);
+        // Gere os horários entre o intervalo especificado
+        $interval = new DateInterval('PT' . $frequencia . 'M');
+        $period = new DatePeriod($inicio, $interval, $termino);
 
-        // Crie uma nova instância de Servico e configure o ID
-        $servico = new Servico();
-        $servico->setIdServico($servicoAgenda);
-
-        // Associe o cliente e o serviço à agenda
-        $agenda->setServico($servico);
-        $agenda->setCliente($cliente);
-
-        // Tente cadastrar a agenda
+        // Tente cadastrar cada horário gerado
         try {
-            $agenda->cadastrar($agenda);
+            foreach ($period as $hora) {
+                $agenda = new Agenda();
+                $agenda->setDataAgenda($dataAgenda);
+                $agenda->setHoraAgenda($hora->format('H:i:s'));
+                $agenda->cadastrarHorario($agenda);
+            }
+
             // Redirecione o usuário de volta para o formulário após o cadastro
             header("Location: form-agenda.php?status=success");
             exit();

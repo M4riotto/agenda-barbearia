@@ -1,126 +1,58 @@
 <?php
 include_once("sentinela-adm.php");
-
-require_once("../classes/Conexao.php");
+require_once("../classes/Agenda.php");
+require_once("../classes/Cliente.php");
 require_once("../classes/Servico.php");
+
 try {
+    $cliente = new Cliente();
+    $listacliente = $cliente->listar();
+
     $servico = new Servico();
     $listaservico = $servico->listar();
-    $contaServico = $servico->contar();
+
+    // Lista os horários disponíveis
+    $agenda = new Agenda();
+    $dataSelecionada = $_POST['dataAgenda'] ?? null;
+    $horariosDisponiveis = $dataSelecionada ? $agenda->listarHorariosDisponiveis($dataSelecionada) : [];
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 
 <head>
-    <title>Produtos | Duhel</title>
-
-    <!-- Meta -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
-    <link rel="shortcut icon" href="favicon.ico">
+    <!-- - - - - - - - -| CSS | - - - - - - - - -->
 
     <link rel="stylesheet" href="../css/style.css?v=<?php echo filemtime('../css/style.css'); ?>">
     <link rel="stylesheet" href="../css/global.css?v=<?php echo filemtime('../css/global.css'); ?>">
     <link rel="stylesheet" href="../css/private.css?v=<?php echo filemtime('../css/private.css'); ?>">
-    <link rel="stylesheet" href="../css/private-produtos.css?v=<?php echo filemtime('../css/private-produtos.css'); ?>">
-    <!-- <link rel="stylesheet" href="../css/conteudo-pag.css"> -->
+    <link rel="stylesheet" href="../css/private-agenda.css?v=<?php echo filemtime('../css/private-agenda.css'); ?>">
     <link rel="stylesheet" href="../css/portal.css?v=<?php echo filemtime('../css/portal.css'); ?>">
-    <link rel="stylesheet" href="../css/alert.css?v=<?php echo filemtime('../css/alert.css'); ?>">
-    <link rel="stylesheet" href="../css/conteudo-pag.css?v=<?php echo filemtime('../css/conteudo-pag.css'); ?>">
+    <!-- - - - - - - - -| FONTE | - - - - - - - - -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;700;900&family=Montserrat:wght@300;400:500&display=swap" rel="stylesheet">
     <!-- - - - - - - - -| ANIMAÇÃO | - - - - - - - - -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- - - - - - - - -| ÍCONE | - - - - - - - - -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- - - - - - - - -| ÍCONE | - - - - - - - - -->
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <!-- - - - - - - - -| TÍTULO & ÍCONE HEAD | - - - - - - - - -->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- FontAwesome JS-->
-    <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-    <!-- App CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
-
-    <style>
-        .switch {
-            position: absolute;
-            margin-left: -9999px;
-            visibility: hidden;
-        }
-
-        .switch+label {
-            display: block;
-            position: relative;
-            cursor: pointer;
-            outline: none;
-            user-select: none;
-        }
-
-        /* tamanho fundo */
-        .switch--shadow+label {
-            padding: 2px;
-            width: 70px;
-            height: 30px;
-            background-color: #dddddd;
-            border-radius: 60px;
-        }
-
-        .switch--shadow+label:before,
-        .switch--shadow+label:after {
-            display: block;
-            position: absolute;
-            top: 1px;
-            left: 1px;
-            bottom: 1px;
-            content: '';
-        }
-
-        .switch--shadow+label:before {
-            right: 1px;
-            background-color: #f1f1f1;
-            border-radius: 60px;
-            transition: all 0.4s;
-        }
-
-        /* tamanho bolinha */
-        .switch--shadow+label:after {
-            width: 30px;
-            background-color: #fff;
-            border-radius: 100%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s;
-        }
-
-        .switch--shadow:checked+label:before {
-            background-color: #8ce196;
-        }
-
-        /* tamano animação */
-        .switch--shadow:checked+label:after {
-            transform: translateX(37px);
-        }
-    </style>
-
+    <title>Cadastro Produto | Duhel</title>
+    <link rel="icon" type="image/x-icon" href="../images/icon.png">
 </head>
 
-<body class="app" onload="loadEventosDashboard()">
+<body class="app">
     <header class="app-header fixed-top">
         <div class="app-header-inner">
             <div class="container-fluid py-2">
@@ -137,10 +69,7 @@ try {
                         </div><!--//col-->
                         <div class="app-search-box col">
                             <div class="display-f justify-bt align-c header-inicio content-header-list f-mont f-700 f-20">
-                                <p>Listagem de serviços</p>
-                                <a href="./form-servico.php" class="display-f align-c justify-c">
-                                    Cadastrar serviço
-                                </a>
+                                <p>Agendamento</p>
                             </div>
                         </div><!--//app-search-box-->
 
@@ -202,7 +131,7 @@ try {
                         </li><!--//nav-item-->
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link active" href="info-servico.php">
+                            <a class="nav-link " href="info-servico.php">
                                 <span class="nav-icon">
                                     <span class="material-icons-round m-r">content_cut</span>
 
@@ -232,7 +161,7 @@ try {
                         </li><!--//nav-item-->
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link" href="form-agenda-adm.php">
+                            <a class="nav-link active" href="form-agenda-adm.php">
                                 <span class="nav-icon">
                                     <span class="material-icons m-r">contact_mail</span>
 
@@ -248,69 +177,66 @@ try {
         </div><!--//app-sidepanel-->
     </header>
 
+    <div class="anima"></div>
     <div class="app-wrapper">
 
         <div class="app-content pt-3 p-md-3 p-lg-4">
             <div class="row g-3 mb-4 align-items-center justify-content-between">
                 <div class="col-auto">
-                    <p>
-                        <?php
-                        foreach ($contaServico as $linha) {
-                            echo ("<label class='f-kanit f-900 f-20 m-b color-grey-ligth'> Existe: " . $linha['Quantidade'] . " serviços cadastrados</label>");
-                        }
-                        ?>
-                    </p>
-                </div>
-                <div class="col-auto">
                     <div class="page-utilities">
                         <div class="row g-2 justify-content-start justify-content-md-end">
-
-                            <div class="col-auto">
-
-                                <a id="cadastroMemb" class="btn app-btn-primary" href="./form-servico.php" class="display-f align-c justify-c">
-                                    Cadastrar serviço
-                                </a>
-
-                            </div>
                         </div><!--//row-->
                     </div><!--//table-utilities-->
                 </div><!--//col-auto-->
             </div><!--//row-->
             <div class="container-xl d-flex row" id="eventos">
                 <div class="content-pagina ">
+
                     <div class="content-body ">
 
-
-
-
-                        <!-- - - -| ESTRUTURA QUE PUXA AS INFORMAÇÕES DO BANCO ⬇️ | - - - -->
-                        <?php
-                        echo ("<div class='display-f align-c w-100 content-card-content justify-content-around'>");
-                        foreach ($listaservico as $linha) {
-                            echo ("
-                            <div class='card-pag-serv animate_card'>
-                            <img src=" . $linha['fotoServico'] . ">
-                        <div class='content-card'>
-                        <div class='t-center f-kanit f-900 f-20 upper m-b'>" . $linha['nomeServico'] . "</div>
-                            <div class='t-center f-mont f-200 f-14'>
-                            <p>" . $linha['descServico'] . "</p>
-                            </div>      
-                            <div class='m-t'>
-                            <a href='excluir.php?excServico=" . $linha['idServico'] . "'> 
-                                            <div class='f-kanit botao-excluir display-f justify-c align-c'>
-                                                <span class='material-icons-round'>delete_forever</span>
-                                                Excluir 
+                        <!-- - - -| FORMULÁRIO DE CADASTRO ✎ | - - - -->
+                        <main class="display-f align-c justify-c">
+                            <div class="bg-form ">
+                                <div class="content-body">
+                                    <div class="display-f align-c justify-c content-form">
+                                        <div class="card">
+                                            <div class="label-titulo">
+                                                <label class="display-f align-c justify-c f-mont f-900 f-36 color-label">
+                                                    <span class="material-icons-round m-r color-blue">event_available</span>
+                                                    Agendamento
+                                                </label>
                                             </div>
-                                        </a>
-                                    </div>         
-                        </div>
-                    </div>
-                           
-                       
-                        ");
-                        }
-                        echo ("</div>");
-                        ?>
+
+                                            <form method="post" action="cadastrar-agenda-admin.php">
+                                                <label class="f-mont f-500 f-18">Data</label>
+                                                <input class="f-mont f-500 f-14 input" type="date" name="dataAgenda" id="dataAgenda" required>
+                                                <br><br>
+
+                                                <label class="f-mont f-500 f-18">Hora de Início</label>
+                                                <input class="f-mont f-500 f-14 input" type="time" name="horaInicio" id="horaInicio" required>
+                                                <br><br>
+
+                                                <label class="f-mont f-500 f-18">Hora de Término</label>
+                                                <input class="f-mont f-500 f-14 input" type="time" name="horaTermino" id="horaTermino" required>
+                                                <br><br>
+
+                                                <label class="f-mont f-500 f-18">Frequência</label>
+                                                <select class="f-mont f-500 f-14 input" name="frequencia" id="frequencia" required>
+                                                    <option value="30">A cada 30 minutos</option>
+                                                    <option value="60">A cada 1 hora</option>
+                                                </select>
+                                                <br><br>
+
+                                                <input onclick="abrirAlerta2()" class="button f-mont f-700 f-18" type="submit" value="Agendar">
+                                                <input class="button2 f-mont f-700 f-18" type="reset" value="Limpar">
+                                            </form>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
                     </div>
                 </div>
             </div><!--//app-card-->
@@ -337,6 +263,56 @@ try {
 
     <!-- Page Specific JS -->
     <script src="./js/app.js"></script>
+    <script src="../js/script.js"></script>
+
+    <script>
+        document.getElementById('dataAgenda').addEventListener('change', function() {
+            var data = this.value;
+
+            fetch('../classes/listar_horarios_disponiveis.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'data=' + data,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    var horaSelect = document.getElementById('horaAgenda');
+                    horaSelect.innerHTML = '';
+
+                    if (data.length) {
+                        data.forEach(function(hora) {
+                            var option = document.createElement('option');
+                            option.value = hora;
+                            option.textContent = hora;
+                            horaSelect.appendChild(option);
+                        });
+                    } else {
+                        var option = document.createElement('option');
+                        option.value = '';
+                        option.textContent = 'Nenhum horário disponível';
+                        horaSelect.appendChild(option);
+                    }
+                })
+                .catch(error => console.error('Erro:', error));
+        });
+
+        function updateAvailableTimes(date) {
+            fetch('listar_horarios.php?data=' + date)
+                .then(response => response.json())
+                .then(data => {
+                    const horaSelect = document.getElementById('horaAgenda');
+                    horaSelect.innerHTML = '<option value="" selected>-Selecione um horário-</option>';
+                    data.forEach(hora => {
+                        const option = document.createElement('option');
+                        option.value = hora;
+                        option.textContent = hora;
+                        horaSelect.appendChild(option);
+                    });
+                });
+        }
+    </script>
 
 </body>
 

@@ -193,7 +193,7 @@ try {
                         </li><!--//nav-item-->
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link" href="info-cliente.php">
+                            <a class="nav-link " href="info-cliente.php">
                                 <span class="nav-icon">
                                     <span class="material-icons-round m-r">account_circle</span>
 
@@ -203,7 +203,7 @@ try {
                         </li><!--//nav-item-->
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link" href="info-servico.php">
+                            <a class="nav-link " href="info-servico.php">
                                 <span class="nav-icon">
                                     <span class="material-icons-round m-r">content_cut</span>
 
@@ -213,7 +213,7 @@ try {
                         </li><!--//nav-item-->
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link " href="info-agenda.php">
+                            <a class="nav-link  " href="info-agenda.php">
                                 <span class="nav-icon">
                                     <span class="material-icons-round m-r">event_available</span>
 
@@ -229,6 +229,16 @@ try {
 
                                 </span>
                                 <span class="nav-link-text f-mont f-700 f-16">Mensagens</span>
+                            </a><!--//nav-link-->
+                        </li><!--//nav-item-->
+                        <li class="nav-item">
+                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                            <a class="nav-link" href="form-agenda-adm.php">
+                                <span class="nav-icon">
+                                    <span class="material-icons m-r">contact_mail</span>
+
+                                </span>
+                                <span class="nav-link-text f-mont f-700 f-16">Cadastrar Agenda </span>
                             </a><!--//nav-link-->
                         </li><!--//nav-item-->
 

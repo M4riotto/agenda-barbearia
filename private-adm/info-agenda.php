@@ -238,6 +238,16 @@ try {
                                 <span class="nav-link-text f-mont f-700 f-16">Mensagens</span>
                             </a><!--//nav-link-->
                         </li><!--//nav-item-->
+                        <li class="nav-item">
+                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                            <a class="nav-link" href="form-agenda-adm.php">
+                                <span class="nav-icon">
+                                    <span class="material-icons m-r">contact_mail</span>
+
+                                </span>
+                                <span class="nav-link-text f-mont f-700 f-16">Cadastrar Agenda </span>
+                            </a><!--//nav-link-->
+                        </li><!--//nav-item-->
 
                     </ul><!--//app-menu-->
                 </nav><!--//app-nav-->

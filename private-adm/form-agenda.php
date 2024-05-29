@@ -5,16 +5,19 @@ require_once("../classes/Cliente.php");
 require_once("../classes/Servico.php");
 
 try {
-
     $cliente = new Cliente();
     $listacliente = $cliente->listar();
 
     $servico = new Servico();
     $listaservico = $servico->listar();
+
+    // Lista os horários disponíveis
+    $agenda = new Agenda();
+    $dataSelecionada = $_POST['dataAgenda'] ?? null;
+    $horariosDisponiveis = $dataSelecionada ? $agenda->listarHorariosDisponiveis($dataSelecionada) : [];
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +52,7 @@ try {
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
 </head>
 
-<body class="app" onload="loadEventosDashboard()">
+<body class="app">
     <header class="app-header fixed-top">
         <div class="app-header-inner">
             <div class="container-fluid py-2">
@@ -198,39 +201,36 @@ try {
                                                 <label class="f-mont f-500 f-18">Data</label>
                                                 <input class="f-mont f-500 f-14 input" type="date" name="dataAgenda" id="dataAgenda">
                                                 <br><br>
+                                                
                                                 <label class="f-mont f-500 f-18">Hora</label>
-                                                <input class="f-mont f-500 f-14 input" type="time" name="horaAgenda" id="horaAgenda">
+                                                <select class="f-mont f-500 f-14 input" name="horaAgenda" id="horaAgenda">
+                                                    <option value="">Selecione uma data para ver os horários disponíveis</option>
+                                                </select>
                                                 <br><br>
-
 
                                                 <select class="f-mont f-500 f-14 input" name="servicoAgenda">
                                                     <option value="0" selected>-Selecione um serviço-</option>
                                                     <?php foreach ($listaservico as $linhas) { ?>
-                                                        <option value="<?php echo ($linhas['idServico']) ?>">
-                                                            <?php echo ($linhas['nomeServico']) ?>
-                                                        <option>
-                                                        <?php } ?>
+                                                        <option value="<?= $linhas['idServico'] ?>"><?= $linhas['nomeServico'] ?></option>
+                                                    <?php } ?>
                                                 </select>
-
                                                 <br><br>
 
                                                 <select class="f-mont f-500 f-14 input" name="clienteAgenda">
                                                     <option value="0" selected>-Selecione um cliente-</option>
                                                     <?php foreach ($listacliente as $linhas) { ?>
-                                                        <option value="<?php echo ($linhas['idCliente']); ?>">
-                                                            <?php echo ($linhas['nomeCliente']) ?>
-                                                        </option>
+                                                        <option value="<?= $linhas['idCliente'] ?>"><?= $linhas['nomeCliente'] ?></option>
                                                     <?php } ?>
                                                 </select>
-
                                                 <br><br>
 
                                                 <select class="f-mont f-500 f-14 input" name="userAgenda" id="userAgenda">
                                                     <option value="0" selected>-Selecione o profissional-</option>
-                                                    <option value="2">Vitor moreira</option>
+                                                    <option value="2">Vitor Moreira</option>
                                                 </select>
+                                                <br><br>
 
-                                                <input onclick="abrirAlerta2()" class="button f-mont f-700 f-18" type="submit" value="Agendar">
+                                                <input class="button f-mont f-700 f-18" type="submit" value="Agendar">
                                                 <input class="button2 f-mont f-700 f-18" type="reset" value="Limpar">
                                             </form>
 
@@ -267,6 +267,55 @@ try {
     <!-- Page Specific JS -->
     <script src="./js/app.js"></script>
     <script src="../js/script.js"></script>
+
+    <script>
+        document.getElementById('dataAgenda').addEventListener('change', function() {
+            var data = this.value;
+
+            fetch('../classes/listar_horarios_disponiveis.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'data=' + data,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    var horaSelect = document.getElementById('horaAgenda');
+                    horaSelect.innerHTML = '';
+
+                    if (data.length) {
+                        data.forEach(function(hora) {
+                            var option = document.createElement('option');
+                            option.value = hora;
+                            option.textContent = hora;
+                            horaSelect.appendChild(option);
+                        });
+                    } else {
+                        var option = document.createElement('option');
+                        option.value = '';
+                        option.textContent = 'Nenhum horário disponível';
+                        horaSelect.appendChild(option);
+                    }
+                })
+                .catch(error => console.error('Erro:', error));
+        });
+
+        function updateAvailableTimes(date) {
+            fetch('listar_horarios.php?data=' + date)
+                .then(response => response.json())
+                .then(data => {
+                    const horaSelect = document.getElementById('horaAgenda');
+                    horaSelect.innerHTML = '<option value="" selected>-Selecione um horário-</option>';
+                    data.forEach(hora => {
+                        const option = document.createElement('option');
+                        option.value = hora;
+                        option.textContent = hora;
+                        horaSelect.appendChild(option);
+                    });
+                });
+        }
+    </script>
 
 </body>
 

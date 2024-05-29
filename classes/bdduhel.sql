@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 23/04/2024 às 22:56
--- Versão do servidor: 10.11.7-MariaDB-cll-lve
--- Versão do PHP: 7.2.34
+-- Host: 127.0.0.1
+-- Tempo de geração: 29/05/2024 às 16:38
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,44 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `u455152201_barbearia`
+-- Banco de dados: `bdduhel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `horarios_disponiveis`
+--
+
+CREATE TABLE `horarios_disponiveis` (
+  `id` int(11) NOT NULL,
+  `data` date NOT NULL,
+  `hora` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `horarios_disponiveis`
+--
+
+INSERT INTO `horarios_disponiveis` (`id`, `data`, `hora`) VALUES
+(19, '2024-05-31', '09:00:00'),
+(20, '2024-05-31', '09:30:00'),
+(21, '2024-05-31', '10:00:00'),
+(22, '2024-05-31', '10:30:00'),
+(23, '2024-05-31', '11:00:00'),
+(24, '2024-05-31', '11:30:00'),
+(25, '2024-05-31', '12:00:00'),
+(26, '2024-05-31', '12:30:00'),
+(27, '2024-05-31', '13:00:00'),
+(28, '2024-05-31', '13:30:00'),
+(29, '2024-05-31', '14:00:00'),
+(30, '2024-05-31', '14:30:00'),
+(31, '2024-05-31', '15:00:00'),
+(32, '2024-05-31', '15:30:00'),
+(33, '2024-05-31', '16:00:00'),
+(34, '2024-05-31', '16:30:00'),
+(35, '2024-05-31', '17:00:00'),
+(36, '2024-05-31', '17:30:00');
 
 -- --------------------------------------------------------
 
@@ -30,21 +66,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbagenda` (
   `idagenda` int(11) NOT NULL,
   `dataAgenda` date NOT NULL,
-  `horaAgenda` varchar(20) NOT NULL,
+  `horaAgenda` time NOT NULL,
   `idcliente` int(11) NOT NULL,
   `idservico` int(11) NOT NULL,
   `idusuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Despejando dados para a tabela `tbagenda`
 --
 
 INSERT INTO `tbagenda` (`idagenda`, `dataAgenda`, `horaAgenda`, `idcliente`, `idservico`, `idusuario`) VALUES
-(1, '2024-04-03', '15:07', 1, 1, 2),
-(2, '2024-04-20', '15:12', 2, 1, 2),
-(4, '2024-05-01', '17:32', 3, 1, 2),
-(5, '2024-04-24', '21:28', 1, 1, 2);
+(19, '2024-05-31', '15:00:00', 2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -57,7 +90,7 @@ CREATE TABLE `tbcliente` (
   `nomeCliente` varchar(300) NOT NULL,
   `cpfCliente` varchar(15) NOT NULL,
   `celularCliente` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Despejando dados para a tabela `tbcliente`
@@ -65,8 +98,10 @@ CREATE TABLE `tbcliente` (
 
 INSERT INTO `tbcliente` (`idCliente`, `nomeCliente`, `cpfCliente`, `celularCliente`) VALUES
 (1, 'tedste', '490.401.288-71', '(12)98836-7044'),
+(2, 'Maria Souza', '', ''),
 (3, 'Lucas', '490.401.288-71', '1298383933'),
-(4, 'Giovanna', '490.309.423-14', '(12)98836-7044');
+(4, 'Giovanna', '490.309.423-14', '(12)98836-7044'),
+(9, 'João Silva', '', '');
 
 -- --------------------------------------------------------
 
@@ -78,15 +113,7 @@ CREATE TABLE `tbcontato` (
   `idContato` int(11) NOT NULL,
   `emailContato` varchar(250) NOT NULL,
   `textoContato` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
---
--- Despejando dados para a tabela `tbcontato`
---
-
-INSERT INTO `tbcontato` (`idContato`, `emailContato`, `textoContato`) VALUES
-(1, 'teste@gmail.com', 'qwdr qwd wqdf wqfcwqcqwcvqw'),
-(4, 'teste@gmail.com', 'asdqw qwd qwdqw');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -99,7 +126,7 @@ CREATE TABLE `tbproduto` (
   `nomeProduto` varchar(300) NOT NULL,
   `descProduto` varchar(300) NOT NULL,
   `fotoProduto` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Despejando dados para a tabela `tbproduto`
@@ -121,7 +148,7 @@ CREATE TABLE `tbservico` (
   `nomeServico` varchar(300) NOT NULL,
   `descServico` varchar(300) NOT NULL,
   `fotoServico` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Despejando dados para a tabela `tbservico`
@@ -142,7 +169,7 @@ CREATE TABLE `tbusuario` (
   `nomeUsuario` varchar(300) NOT NULL,
   `cpfUsuario` varchar(15) NOT NULL,
   `celularUsuario` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Despejando dados para a tabela `tbusuario`
@@ -156,10 +183,18 @@ INSERT INTO `tbusuario` (`idusuario`, `nomeUsuario`, `cpfUsuario`, `celularUsuar
 --
 
 --
+-- Índices de tabela `horarios_disponiveis`
+--
+ALTER TABLE `horarios_disponiveis`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `data` (`data`,`hora`);
+
+--
 -- Índices de tabela `tbagenda`
 --
 ALTER TABLE `tbagenda`
-  ADD PRIMARY KEY (`idagenda`);
+  ADD PRIMARY KEY (`idagenda`),
+  ADD UNIQUE KEY `UC_Agenda` (`dataAgenda`,`horaAgenda`);
 
 --
 -- Índices de tabela `tbcliente`
@@ -196,16 +231,22 @@ ALTER TABLE `tbusuario`
 --
 
 --
+-- AUTO_INCREMENT de tabela `horarios_disponiveis`
+--
+ALTER TABLE `horarios_disponiveis`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
 -- AUTO_INCREMENT de tabela `tbagenda`
 --
 ALTER TABLE `tbagenda`
-  MODIFY `idagenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idagenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `tbcliente`
 --
 ALTER TABLE `tbcliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tbcontato`
@@ -223,7 +264,7 @@ ALTER TABLE `tbproduto`
 -- AUTO_INCREMENT de tabela `tbservico`
 --
 ALTER TABLE `tbservico`
-  MODIFY `idServico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idServico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tbusuario`
